@@ -62,6 +62,10 @@ class WebrootInstaller extends LibraryInstaller
                 !empty($extra['webroot-package']) &&
                 $extra['webroot-package'] === $prettyName) {
                 return $extra['webroot-dir'];
+            } else (!empty($extra['webroot-dir']) && 
+                    !empty($extra['webroot-packages']) && 
+                    !empty($extra['webroot-packages'][$prettyName])) {
+                return $extra['webroot-dir'] . '/' . $extra['webroot-packages'][$prettyName];
             } else {
                 throw new \InvalidArgumentException('Only one package can be installed into the configured webroot.');
             }
