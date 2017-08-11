@@ -62,7 +62,7 @@ class WebrootInstaller extends LibraryInstaller
                 !empty($extra['webroot-package']) &&
                 $extra['webroot-package'] === $prettyName) {
                 return $extra['webroot-dir'];
-            } else (!empty($extra['webroot-dir']) && 
+            } else if (!empty($extra['webroot-dir']) && 
                     !empty($extra['webroot-packages']) && 
                     !empty($extra['webroot-packages'][$prettyName])) {
                 return $extra['webroot-dir'] . '/' . $extra['webroot-packages'][$prettyName];
